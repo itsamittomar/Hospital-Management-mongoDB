@@ -95,7 +95,7 @@ def admin_register():
 @app.route("/",methods=['GET','POST'])
 def admin_login():
 	if session.get('login_id'):
-		return redirect(url_for('patientRegistration'))
+		return redirect(url_for('welcome'))
 	form = Admin_Log()
 	login_id = form.login_id.data
 	pwd = form.pwd.data
