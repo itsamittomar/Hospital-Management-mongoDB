@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form class="pure-form pure-form-aligned" method="POST" >
+    <fieldset >
+      <center>
+        <h3>Issue Diagnostics</h3>
+        <table align="center" cellpadding = "15">
+      <div class="pure-control-group" style="position: center;">
+        
+        {{ form.hidden_tag() }}
+
+        <tr>
+            <td><b> {{ form.patient_ssnid.label }}</b></td>
+            <td>{{ form.patient_ssnid(size=25)  }} </td>
+        </tr>
+      {% for error in form.patient_ssnid.errors %}
+        <span class="error-message">{{ error }}</span>
+       {% endfor %}
+       
+
+      
+        <tr>
+
+           <p style="padding-right:100px ;">
+   <td><b> {{ form.test_name1.label}}  </b></td>
+     <td>{{ form.test_name1  }}</td>
+     
+    </p>
+  </tr>
+        
+
+          <tr>
+            <td><b> {{ form.amount.label }}</b></td>
+            <td><input type="text" id="deposit_amount" value="{{ amount }}" disabled name="patientname" style="width: 245px;color: black" />
+            </td></tr>
+        {% for error in form.amount.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+
+          
+       
+         
+     
+        
+
+        
+
+       
+          
+        <tr>
+          <td colspan="2" align="center">
+             {{ form.issue(class="btn_half") }}
+          </td>
+        </tr>
+{% endblock %}

@@ -1,0 +1,85 @@
+  .heade {
+  font-size: 210%;
+  color: black;
+  text-align: center;
+  padding-left: 350px;
+  font-family: sans-serif;
+  text-transform: none;
+}
+.heade1 {
+  font-size: 25;
+  color: white;
+  font-family: sans-serif;
+  text-transform: none;
+}
+
+.pure-menu-list{
+  padding-left: 140px;
+  font-family: sans-serif;
+  font-size: 90%;
+}
+
+
+.dropbtn {
+  background-color: yellow;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: gray;
+}
+.pure-control-group{
+  padding-left: 100px;
+}
+
+.btn {
+  border-radius: 7px;
+  display: inline-block;
+  padding: 12px 24px;
+  background: black;
+  font-weight: bold;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: ease .3s;
+}
+
+
+
+.btn-submit:hover {
+  opacity: 1;
+}

@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<h1 style="color: black;padding-top: 20px;
+font-family:Arial, Helvetica, sans-serif; font-weight: 600; font-size:x-large;"><center>Diagnostics</center></h1>
+<center>
+ <form class="pure-form pure-form-aligned" method="POST" >
+   <fieldset style="position: center">
+
+        <div class="pure-control-group" >
+         
+          {{ form.hidden_tag() }}
+             
+             <p style="color: black;">    {{ form.patient_ssnid(size=25)  }}  
+             {% for error in form.patient_ssnid.errors %}
+             <span class="error-message">{{ error }}</span>
+            {% endfor %}
+            <span style="padding-left: 50px;">{{ form.get(class = "btn_round") }}  </span> 
+           </p>
+ 
+           
+         </div>
+         <table class="table" style="color: black;   border: 1px solid black;
+         border-collapse: collapse;" >
+            <thead>
+              <tr style="background-color: rgb(105,105,105);  text-align: center;  border: 1px solid black;">
+                <th scope="col" style="border: 1px solid black; 
+                padding: 20px;
+                font-weight: 500; color:  white;">Patient SSN ID</th>
+                  
+                    <th scope="col" style="border: 1px solid black; padding: 20px; font-weight: 500; color:  white;">Name</th>
+                    <th scope="col" style="border: 1px solid black; padding: 20px; font-weight: 500; color:  white;">Age</th>
+                    <th scope="col" style="border: 1px solid black; padding: 20px;font-weight: 500; color:  white; ">Address</th>
+                    <th scope="col" style="border: 1px solid black; padding: 20px; font-weight: 500; color:  white;">DOJ</th>
+                    <th scope="col" style="border: 1px solid black; padding: 20px; font-weight: 500; color:  white;">Type of Room</th>
+  
+      
+                </tr>
+                </thead>
+    
+             
+                {% for d in det %}
+                  
+                <td  class="td">{{ d["patient_ssnid"] }}</td>
+                <td  class="td">{{ d["patient_name"] }}</td>
+                <td  class="td">{{ d["age"] }}</td>
+                <td  class="td">{{ d["address"] }}</td>
+                <td class="td">{{ doj }}</a></td>
+                <td  class="td">{{ d["bed_type"] }}</td>
+                 
+            
+            </tr>
+            {% endfor %}
+
+
+       </table>
+               
+ 
+     </fieldset>
+   </center>
+ 
+
+
+</div>
+
+
+<h1 style="color: black;padding-top: 20px;
+font-family:Arial, Helvetica, sans-serif; font-weight: 600; font-size:x-large;"><center>Diagnostics Conducted</center></h1>
+<center>
+ 
+   <fieldset style="position: center">
+
+        <div class="pure-control-group" style="padding-right: 150px;">
+         
+          {{ form.hidden_tag() }}
+             
+         </div>
+         <table class="table" style="color: black;   border: 1px solid black;
+         border-collapse: collapse; width: 30%; " >
+            <thead>
+              <tr style="background-color: rgb(105,105,105);  text-align: center;  border: 1px solid black;">
+                <th scope="col" style="border: 1px solid black; 
+                padding: 20px;
+                font-weight: 500; color:  white;">Name Of The Test</th>
+                  
+                    <th scope="col" style="border: 1px solid black; padding: 20px; font-weight: 500;
+                    color: white;">Amount</th>
+
+      
+                </tr>
+                </thead>
+    
+             
+                {% for d in tests %}
+                  
+                <td  class="td">{{ d["test_name"] }}</td>
+                <td class="td">{{ d["amount"] }}</td>
+
+
+                 
+            
+            </tr>
+            {% endfor %}
+
+
+       </table>
+               
+ 
+     </fieldset>
+   </center>
+ 
+</div>
+
+<center style="padding: 20px;">
+  <a href="{{url_for('issue_diagnostics')}}" class="button"><span style="color: white;">Add Diagnostics</span></a>
+</center>
+
+<center>
+
+  
+    <fieldset style="position: center">
+ 
+         <div class="pure-control-group" style="padding-right: 150px;">
+          
+           {{ form.hidden_tag() }}
+              
+          </div>
+ 
+         
+ 
+  <table class="table" style="color: white;   border: 1px solid black; 
+          border-collapse: collapse; width: 30%;" id="table_pharm">
+   <thead>
+     <tr style="background-color: rgb(105,105,105);  text-align: center;  border: 1px solid black;">
+       <th scope="col" style="border: 1px solid black; 
+       padding: 20px;
+       font-weight: 500;">Name Of The Test</th>
+         
+           <th scope="col" style="border: 1px solid black; padding: 20px;font-weight: 500;">Amount</th>
+
+           
+           
+       </tr>
+       
+       </thead>
+ 
+       
+       
+        <div style="padding-left: 120px; padding-top: 30px;">
+       <tr>
+        {% for d in range(2) %}
+        <td class="td" style="background-color: #3198BE;;">
+         <input type="text" size="10" name={{d}}>
+        </td>
+       
+        {% endfor %}
+      </tr>
+      </table>
+    </div>
+   
+    <p style="padding-top: 40px;">
+       
+
+        <input type="submit" name="update" value="UPDATE" class="btn_half">
+ 
+      </fieldset>
+   
+  </form>
+ </div>
+ </center>
+ 
+   
+
+{% endblock %}

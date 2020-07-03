@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UTA - Home Page</title>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" 
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+          
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+
+  <style type="text/css">
+     .header {
+          font-size:x-large;
+          color: black;
+          text-align: center;
+          padding-left: 200px;
+          font-family: sans-serif;
+          overflow:auto;
+        }
+
+
+
+        .btn_1 {
+          border-radius: 7px;
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size:20px;
+  padding: 10px;
+  width: 180px;
+  cursor: pointer;
+  margin: 5px
+}
+
+  .btn_half {
+  display: inline-block;
+  border-radius: 15px;
+  padding: 13px 30px;
+  background: black;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  outline: none;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 0 7px 15px black;
+}
+.btn_half:active{
+  transform: translateY(10px);
+}
+
+
+.btn_round {
+  display: inline-block;
+  border-radius: 50px;
+  padding: 8px 40px;
+  background: black;
+  letter-spacing: 4px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 7px 10px black;
+  transition: ease .3s;
+}
+.btn_round:active{
+  transform: translateX(10px);
+}
+
+
+        #top,
+#bottom {
+    position: fixed;
+   
+    left: 0;
+    right: 0;
+    height: 80%;
+}
+
+#top {
+    top: 0;
+    background-color: #81DCFE ;
+}
+
+#bottom {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background: #3198BE;
+  color: black;
+  overflow: scroll;
+}
+
+option { 
+    /* Whatever color  you want */
+    background-color: #3198BE;
+}
+.specialColor { 
+    /* Whatever color  you want */
+    background-color: #3198BE;
+    height: 30px;
+    width: 200px;
+    align-items: center;
+    margin-right: 50px;
+}
+        .pure-menu-list{
+          padding-left: 140px;
+          font-family: sans-serif;
+          font-size: 90%;
+        }
+        
+        
+        .dropbtn {
+         
+          color: black;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        .dropdown {
+          
+          position: relative;
+          display: inline-block;
+          font-size: large;
+          align-items: center;
+          padding-right: 150px;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 100px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        .dropdown-content a:hover {background-color: #3198BE}
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+          background-color: black;
+        }
+        .pure-control-group{
+          padding-left: 100px;
+        }
+
+        .table{
+        
+          width: 70%;
+          color: white;
+          font-weight: 100;
+        }
+
+        .td{
+          text-align: center; 
+          background-color: white;   
+          border: 1px solid black;  
+          padding: 20px;
+          font-weight: 400;
+          color: black;
+        }
+
+  .button {
+  border-radius: 7px;
+  background-color: black;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  box-shadow: 0 7px 15px black;
+  font-size:20px;
+  padding: 20px;
+  width: 180px;
+  cursor: pointer;
+ 
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: relative;
+  font-size: 34px;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  left: 20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  color: white;
+  right: 0;
+}
+
+
+
+.button_c {
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 3px;
+  position: relative;
+  background-color: black;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  width: 150px;
+  font-weight: 500;
+  text-align: center;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  box-shadow: 0 10px 15px #193047;
+  border-radius: 25px;
+}
+
+.button_c:hover {
+  background: #fff;
+  box-shadow: 0px 2px 10px 5px black;
+  color: #000;
+}
+
+.button_c:after {
+  content: "";
+  background: black;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button_c:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.button_c:focus { outline:0; }
+
+
+.button_l {
+  border-radius: 7px;
+  background-color: #3198BE ;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 2px;
+  color: black;
+  font-weight: 700;
+  box-shadow: 0 7px 15px black;
+  font-size:20px;
+  width: 160px;
+  cursor: pointer;
+ 
+}
+
+.button_l span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button_l span:after {
+  content: 'X';
+  position: relative;
+  font-size: 30px;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  
+  transition: 0.5s;
+}
+
+.button_l:hover span {
+  padding-right: 25px;
+}
+
+.button_l:hover span:after {
+  opacity: 1;
+  color: white;
+  right: 0;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+.body {
+  text-align:center;
+  background:#3198BE;
+  color:white;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:300;
+  font-size:32px;
+  font-weight: 600;
+  text-shadow:0px 10px 10px black;
+  overflow:auto;
+  padding-top: 80px;
+  padding-right: 100px ;
+  -webkit-backface-visibility:hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.div_welcome {
+  display:flexbox;
+  overflow:initial;
+  white-space:nowrap;
+}
+
+.div_app {
+  display:flexbox;
+  overflow:hidden;
+  height: 70px;
+  padding-top: 10px;
+  white-space:nowrap;
+}
+
+.div_welcome:first-of-type {    /* For increasing performance 
+                       ID/Class should've been used. 
+                       For a small demo 
+                       it's okaish for now */
+  animation: showup 7s infinite;
+}
+
+.div_app:last-of-type {
+  width:0px;
+  animation: reveal 7s infinite;
+}
+
+.div_app:last-of-type span {
+
+  animation: slidein 7s infinite;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes slidein {
+    0% { margin-left:-800px; }
+    20% { margin-left:-800px; }
+    35% { margin-left:0px; }
+    100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+    0% {opacity:0;width:0px;}
+    20% {opacity:1;width:0px;}
+    30% {width:1000px;}
+    80% {opacity:1;}
+    100% {opacity:0;width:355px;}
+}
+
+
+
+          </style>
+        }
+
+</head>
+<body style="background-color: #3198BE;">
+
+    
+
+<div class="container"  style="padding-top: 100px; ">
+   
+    {% include "header.html" %}
+
+    {% with msg = get_flashed_messages(with_categories=true) %}
+            {% if msg %}
+                {% for category, msgs in msg%}
+                    <div class = "alert alert-{{category}}">
+                        <p>{{msgs}}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+    {% block content %}
+
+    {% endblock %}
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'login_flash.html' %}
+
+{% block content %}
+        <center>
+            <img src="static/icon-removebg-preview.png" height="300">
+
+            <form class="pure-form pure-form-aligned" method="POST" >
+                <fieldset >
+                  <center>
+                    <table align="center" cellpadding = "15">
+                  <div class="pure-control-group" style="position: center;">
+                    
+                    {{ form.hidden_tag() }}
+            
+            
+                    <tr>
+                        <td style="font-size: large;"><b> {{ form.login_id.label }}</b></td>
+                        <td>{{ form.login_id(size=25)  }} </td>
+                    </tr>
+                  {% for error in form.login_id.errors %}
+                    <span class="error-message">{{ error }}</span>
+                   {% endfor %}
+                   <tr>
+            
+                    <tr>
+                        <td style="font-size: large;"><b> {{ form.pwd.label }}</b></td>
+                        <td>{{ form.pwd(size=25)  }} </td>
+                    </tr>
+                  {% for error in form.pwd.errors %}
+                    <span class="error-message">{{ error }}</span>
+                   {% endfor %}
+                   <tr>
+
+                   </tr>
+                   </div>
+                   </table>
+                   <div style="padding-top:20px;">
+                 {{form.login(class="button")}}
+                </div>
+    
+                <div style="padding-top: 40px;"><h5>Don't have an account ? <a href="{{url_for('admin_register')}}">Register Here</a></h5></div>
+        </center>
+{% endblock %}

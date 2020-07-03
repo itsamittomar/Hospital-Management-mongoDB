@@ -1,0 +1,106 @@
+{% extends "layout.html"%}
+
+    {% block content %}
+
+     <script>
+  
+  $(function() {
+    $( ".dtpick" ).datepicker();
+  });
+  </script>
+  
+    <form class="pure-form pure-form-aligned" method="POST" >
+    <fieldset>
+      <center>
+      <h3>Patient Registration</h3>
+      <table align="center" cellpadding = "15">
+      <div class="pure-control-group" style="position: center;">
+
+
+        {{ form.hidden_tag() }}
+
+         <!----- Patient SSN ID ---------------------------------------------------------->
+      <tr>
+        <td><b>{{ form.patient_ssnid.label }}</b></td>
+        <td>{{ form.patient_ssnid(size=25)  }}</td>
+      <td>
+      {% for error in form.patient_ssnid.errors %}
+  <span class="error-message">{{ error }}</span>
+ {% endfor %}
+</td>
+</tr>
+
+      <!----- Patient Name ---------------------------------------------------------->
+<tr>
+  <td><b>{{ form.name.label }}</b></td>
+  <td>{{ form.name(size=25)  }}</td>
+</tr>
+   
+  <!----- Age ---------------------------------------------------------->
+  <tr>
+  <td><b>{{ form.age.label }}</b></td>
+  <td>{{ form.age(size=25) }}</td>
+  </tr>
+   
+  <!----- Date of Admission ---------------------------------------------------------->
+   <tr>
+  <td><b>{{ form.date_of_admission.label }}  </b></td>
+  <td>   {{ form.date_of_admission(class="dtpick")  }} </td>
+  </tr>
+  {% for error in form.date_of_admission.errors %}
+  <span class="error-message">{{ error }}</span>
+ {% endfor %}
+   
+  <!----- Type of bed ----------------------------------------------------------->
+  <tr>
+  <td><b>{{ form.type_of_bed.label }}  </b></td>
+  <td>   {{ form.type_of_bed  }} </td>
+  </tr>
+  {% for error in form.type_of_bed.errors %}
+  <span class="error-message">{{ error }}</span>
+ {% endfor %}
+   
+  <!----- Address ---------------------------------------------------------->
+  <tr>
+  <td><b> {{ form.address.label }} </b><br /><br /><br /></td>
+  <td>{{ form.address(size=40)  }} </td>
+  </tr>
+  {% for error in form.address.errors %}
+            <span class="error-message">{{ error }}</span>
+  {% endfor %}
+   
+  <!----- State ---------------------------------------------------------->
+  <tr>
+      <td><b>{{ form.state.label }} </b></td>
+      <td>  {{ form.state  }} </td>
+  </tr>
+  {% for error in form.state.errors %}
+            <span class="error-message">{{ error }}</span>
+           {% endfor %}
+  
+  <!----- City ---------------------------------------------------------->
+  <tr>
+      <td><b>{{ form.city.label }}   </b></td>
+      <td>   {{ form.city  }}  </td>
+  </tr>
+   
+  <!----- Submit and Reset ------------------------------------------------->
+  <tr>
+  <td colspan="1" align="center"  >
+  {{ form.submit(class= "btn_half") }}
+
+  <td><input type="reset" value="Reset" class="btn_half">
+  </td>
+  </td>
+  
+  </tr>
+  
+        </div>
+        </table>
+       
+    </fieldset>
+    </center>
+ 
+</form>
+
+   {% endblock %}

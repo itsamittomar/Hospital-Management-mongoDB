@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form class="pure-form pure-form-aligned" method="POST" >
+    <fieldset >
+      <center>
+        <h3>Add Diagnostics</h3>
+        <table align="center" cellpadding = "15">
+      <div class="pure-control-group" style="position: center;">
+        
+        {{ form.hidden_tag() }}
+
+
+        <tr>
+            <td><b> {{ form.Diagnostics_id.label }}</b></td>
+            <td>{{ form.Diagnostics_id(size=25)  }} </td>
+        </tr>
+      {% for error in form.Diagnostics_id.errors %}
+        <span class="error-message">{{ error }}</span>
+       {% endfor %}
+       <tr>
+
+        <tr>
+            <td><b> {{ form.test_name.label }}</b></td>
+            <td>{{ form.test_name(size=25)  }} </td>
+        </tr>
+      {% for error in form.test_name.errors %}
+        <span class="error-message">{{ error }}</span>
+       {% endfor %}
+       <tr>
+            <td><b> {{ form.rate.label }}</b></td>
+            <td>{{ form.rate(size=25)  }} </td>
+        </tr>
+        {% for error in form.rate.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+
+
+       
+          
+        <tr>
+          <td colspan="2" align="center">
+             {{ form.submit(class="btn_half") }}
+          </td>
+        </tr>
+{% endblock %}

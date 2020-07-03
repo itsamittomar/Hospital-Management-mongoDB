@@ -1,0 +1,60 @@
+<header style="background-color: #3198BE   ">
+    <div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed" style="background-color: lightskyblue ; ">
+        <a class="pure-menu-heading" href="{{url_for('welcome')}}" style="padding-left: -500px;"><strong><font class="header">ABC Hospital Management Systems</font></strong> </a>
+        <a class="button_l" href="{{url_for('admin_logout')}}" style="float: right; text-decoration: none;
+        color: black;
+        box-shadow: 0px 5px 15px black; " ><span>Logout </span></a>
+        <br>
+            <div style="background-color:  lightskyblue ">
+        <a class="pure-menu-heading" href="" ></a>
+
+        <ul class="pure-menu-list" style="background-color:  lightskyblue ">
+           
+
+           
+            <div class="dropdown">
+              <li class="dropbtn" style="background-color:  lightskyblue; font-size: 100%;font-weight: 600;">Patient</li>
+              <div class="dropdown-content">
+                <a href="{{url_for ('patientRegistration')}}" style="font-size: 90%; font-weight: 500;">Patient Registration</a>
+                <a href="{{url_for ('update_patient')}}" style="font-size: 90%; font-weight: 500;">Update Patient</a>
+                <a href="{{url_for ('delete_patient')}}" style="font-size: 90%; font-weight: 500;">Delete Patient </a>
+                <a href="{{url_for ('view_patient')}}" style="font-size: 90%; font-weight: 500;">View Patients </a>
+                <a href="{{url_for ('search_patient')}}" style="font-size: 90%; font-weight: 500;">Search Patients </a>
+              
+                </div>
+            </div>
+
+              <div class="dropdown">
+                <li class="dropbtn" style="background-color:  lightskyblue; font-size: 100%; font-weight: 600; ">Pharmacy</li>
+              <div class="dropdown-content">
+                <a href="{{url_for ('pharm')}}" style="font-size: 90%; font-weight: 500;">Pharmacy</a>
+                <a href="{{url_for ('add_medicine')}}" style="font-size: 90%; font-weight: 500;">Add Medicines</a>
+                <a href="{{url_for ('issue_medicine')}}" style="font-size: 90%; font-weight: 500;">Issue Medicines</a>
+                <a href="{{url_for ('billing')}}" style="font-size: 90%; font-weight: 500;">Billing</a>
+              
+                </div>
+
+
+          </div>
+          <div class="dropdown">
+                <li class="dropbtn" style="background-color:  lightskyblue; font-size: 100%;  font-weight: 600;  ">Diagnostics</li>
+              <div class="dropdown-content">
+                <a href="{{url_for ('diagnostics')}}" style="font-size: 90%; font-weight: 500;">Diagnostics</a>
+                <a href="{{url_for ('diagnostics_master_file')}}" style="font-size: 90%; font-weight: 500;">Add Diagnostics Test</a>
+                <a href="{{url_for ('issue_diagnostics')}}" style="font-size: 90%; font-weight: 500;">Issue Diagnostics Test</a>
+               
+                </div>
+
+
+             
+        </div>
+
+        
+        </ul>
+        </div>
+      </div>
+    </div>
+
+</div>
+</header>

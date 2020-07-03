@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form class="pure-form pure-form-aligned" method="POST" >
+    <fieldset >
+      <center>
+        <h3>Issue Medicines</h3>
+        <table align="center" cellpadding = "15">
+      <div class="pure-control-group" style="position: center;">
+        
+        {{ form.hidden_tag() }}
+
+        <tr>
+            <td><b> {{ form.patient_ssnid.label }}</b></td>
+            <td>{{ form.patient_ssnid(size=25)  }} </td>
+        </tr>
+      {% for error in form.patient_ssnid.errors %}
+        <span class="error-message">{{ error }}</span>
+       {% endfor %}
+        
+       
+         
+        <tr>
+
+           <p style="padding-right:100px ;">
+   <td><b> {{ form.med_name1.label}}  </b></td>
+     <td>{{ form.med_name1  }}</td>
+     
+    </p>
+  </tr>
+        
+
+        <tr>
+            <td><b> {{ form.quant.label }}</b></td>
+            <td>{{ form.quant(size=25)  }} </td>
+        </tr>
+        {% for error in form.quant.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+
+          <div class="pure-control-group" style="padding-right: 150px;">
+            <label for="aligned-email" style="color: black;">
+            <tr>
+              <td><b>{{ form.amount.label}}</b></td> </label>
+              <td><input type="text" id="deposit_amount" value="{{ amount }}" disabled style="width: 220px;color: black" /></td>
+            </tr>
+        </div>
+          
+        <tr>
+          <td colspan="2" align="center">
+             {{ form.submit(class="btn_half") }}
+          </td>
+        </tr>
+{% endblock %}

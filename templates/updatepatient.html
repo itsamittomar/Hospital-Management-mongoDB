@@ -1,0 +1,65 @@
+{% extends "layout.html"%}
+
+{% block content %}
+<form class="pure-form pure-form-aligned" method="POST" >
+<fieldset>
+  <center>
+  <h3>Update Patient</h3>
+  <table align="center" cellpadding = "15">
+  <div class="pure-control-group" style="position: center;">
+
+
+    {{ form.hidden_tag() }}
+
+     <!----- Patient SSN ID ---------------------------------------------------------->
+  <tr>
+    <td><b>{{ form.patient_ssnid.label }}</b></td>
+    <td>{{ form.patient_ssnid(size=33)  }}</td>
+    <td>{{ form.get(class="btn_round") }}</td>
+  </tr>
+             
+  <tr>
+      <td><b>{{ form.name.label}}</b></td>
+      <td> <input type="text" id="deposit_amount" value="{{pat["patient_name"]}}" name="patientname" style="width: 320px;color: black" /></td>
+  </tr>
+
+  <tr>
+      <td><b>{{ form.age.label}}</b></td>
+      <td><input type="text" id="deposit_amount" value="{{pat["age"]}}" name="age" style="width: 320px;color: black" /></td>
+  </tr>
+  
+  <tr>
+    <td><b>{{ form.address.label}}</b><br /><br /><br /></td>
+    <td><input type="text" id="deposit_amount" value="{{pat["address"]}}" name="address"  style="width: 320px;color: black; height: 70px;" /></td>
+  </tr>
+
+  <tr>
+    <td><b>{{ form.type_of_bed.label}}</b></td>
+    <td name="type_of_bed">{{form.type_of_bed}}</td>
+  </tr>
+
+  <tr>
+    <td><b>{{ form.state.label}}</b></td>
+    <td name="state">{{form.state}}</td>
+  </tr>
+  <tr>
+    <td><b>{{ form.city.label}}</b></td>
+    <td name="city">{{form.city}}</td>
+  </tr>
+            
+   
+  
+  <tr>
+    <td colspan="2" align="center">
+    {{ form.submit(class="btn_half") }}
+  </td>
+  </tr>
+          
+
+        </div>
+      </table>
+    </center>
+  </fieldset>        
+</form>
+
+{% endblock %}

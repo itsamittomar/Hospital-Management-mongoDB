@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form class="pure-form pure-form-aligned" method="POST" >
+    <fieldset >
+      <center>
+        <h3>Add Medicines</h3>
+        <table align="center" cellpadding = "15">
+      <div class="pure-control-group" style="position: center;">
+        
+        {{ form.hidden_tag() }}
+
+        <tr>
+            <td><b> {{ form.med_id.label }}</b></td>
+            <td>{{ form.med_id(size=25)  }} </td>
+        </tr>
+      {% for error in form.med_id.errors %}
+        <span class="error-message">{{ error }}</span>
+       {% endfor %}
+       <tr>
+            <td><b> {{ form.med_name.label }}</b></td>
+            <td>{{ form.med_name(size=25)  }} </td>
+        </tr>
+        {% for error in form.med_name.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+
+        <tr>
+            <td><b> {{ form.quant_available.label }}</b></td>
+            <td>{{ form.quant_available(size=25)  }} </td>
+        </tr>
+        {% for error in form.quant_available.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+
+           <tr>
+            <td><b> {{ form.rate.label }}</b></td>
+            <td>{{ form.rate(size=25)  }} </td>
+        </tr>
+        {% for error in form.rate.errors %}
+            <span class="error-message">{{ error }}</span>
+        {% endfor %}
+        
+       
+         
+     
+        
+
+        
+
+       
+          
+        <tr>
+          <td colspan="2" align="center">
+             {{ form.submit(class="btn_half") }}
+          </td>
+        </tr>
+{% endblock %}
